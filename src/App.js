@@ -47,6 +47,32 @@ function App() {
             </button>
           </div>
         </div>
+        <div className="youtube-section">
+          <h3 className="navigation-heading">Socials</h3>
+          <div className="navigation-buttons">
+            <button
+              onClick={() =>
+                window.open("https://www.youtube.com/@poseidon5555", "_blank")
+              }
+            >
+              Youtube Channel
+            </button>
+            <button
+              onClick={() =>
+                window.open("https://twitter.com/Poseidon_5555", "_blank")
+              }
+            >
+              Twitter
+            </button>
+            <button
+              onClick={() =>
+                window.open("https://t.me/Poseidon_PLS", "_blank")
+              }
+            >
+              Telegram
+            </button>
+          </div>
+        </div>
         <div className="add-token-section">
           <h3 className="add-token-title">Tools</h3>
           <button
@@ -117,17 +143,6 @@ function App() {
 
       <footer className="App-footer">
         <p>Site made by Poseidon</p>
-        <a href="https://t.me/Poseidon_PLS" target="_blank" rel="noreferrer">
-          Telegram
-        </a>
-        <br></br>
-        <a
-          href="https://twitter.com/Poseidon_5555"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Twitter
-        </a>
         <div className="disclaimer">
           <p>
             Disclaimer: The information provided by this application is for
