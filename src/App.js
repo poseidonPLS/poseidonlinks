@@ -84,13 +84,6 @@ function App() {
             </button>
             <button
               onClick={() =>
-                window.open("https://pulsechain-tokens.vercel.app/", "_blank")
-              }
-            >
-              PulseChain Token Explorer
-            </button>
-            <button
-              onClick={() =>
                 window.open("https://imp-loss.vercel.app/", "_blank")
               }
             >
