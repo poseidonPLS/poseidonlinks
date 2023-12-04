@@ -36,7 +36,14 @@ function App() {
                 window.open("https://chromewebstore.google.com/detail/pulsechain-site-checker/jlomlcignpojmjjmiginogpoeaeldpnf?hl=en", "_blank")
               }
             >
-              PulseChain Site Checker
+              PulseChain Site Checker (Chrome)
+            </button>
+            <button
+              onClick={() =>
+                window.open("https://addons.mozilla.org/addon/pulsechain-site-checker/", "_blank")
+              }
+            >
+              PulseChain Site Checker (FireFox)
             </button>
             <button
               onClick={() =>
