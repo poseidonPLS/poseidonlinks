@@ -89,7 +89,20 @@ function App() {
             >
               Impermanent Loss Calculator
             </button>
-
+            <button
+              onClick={() =>
+                window.open("https://plsgas.vercel.app/", "_blank")
+              }
+            >
+              Gas Estimates (Vercel App)
+            </button>
+            <button
+              onClick={() =>
+                window.open("https://plsredirect.vercel.app/", "_blank")
+              }
+            >
+              Link Fixer (for broken IPFS links)
+            </button>
               </div>
             
             <div className="add-beta-section">
