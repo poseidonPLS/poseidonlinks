@@ -80,6 +80,25 @@ function App() {
             </button>
           </div>
         </div>
+        <div className="tgbots-section">
+          <h3 className="navigation-heading">Telegram Bots</h3>
+          <div className="navigation-buttons">
+            <button
+              onClick={() =>
+                window.open("https://t.me/PulseXbuy", "_blank")
+              }
+            >
+              PulseX buys
+            </button>
+            <button
+              onClick={() =>
+                window.open("https://t.me/PLSXpricebot", "_blank")
+              }
+            >
+              Price Bot
+            </button>
+          </div>
+        </div>
         <div className="add-token-section">
           <h3 className="add-token-title">Tools</h3>
           <button
@@ -103,13 +122,6 @@ function App() {
             >
               Gas Estimates (Vercel App)
             </button>
-            <button
-              onClick={() =>
-                window.open("https://plsredirect.vercel.app/", "_blank")
-              }
-            >
-              Link Fixer (for broken IPFS links)
-            </button>
               </div>
             
             <div className="add-beta-section">
@@ -128,6 +140,13 @@ function App() {
               }
             >
               PulseChain Token Explorer
+            </button>
+            <button
+              onClick={() =>
+                window.open("https://plsredirect.vercel.app/", "_blank")
+              }
+            >
+              Link Fixer (for broken IPFS links)
             </button>
             <button
               onClick={() =>
