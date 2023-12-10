@@ -110,6 +110,13 @@ function App() {
             </button>
             <button
               onClick={() =>
+                window.open("https://lasttxns.vercel.app/", "_blank")
+              }
+            >
+              Last 20 txns tool
+            </button>
+            <button
+              onClick={() =>
                 window.open("https://imp-loss.vercel.app/", "_blank")
               }
             >
