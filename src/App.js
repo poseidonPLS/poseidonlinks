@@ -113,7 +113,7 @@ function App() {
                 window.open("https://lasttxns.vercel.app/", "_blank")
               }
             >
-              Last 20 txns tool
+              Block explorer backup (last 20 txns)
             </button>
             <button
               onClick={() =>
