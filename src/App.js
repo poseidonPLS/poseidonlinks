@@ -110,6 +110,13 @@ function App() {
             </button>
             <button
               onClick={() =>
+                window.open("https://pulsechain-tokens.vercel.app/", "_blank")
+              }
+            >
+              PulseChain Token Explorer
+            </button>
+            <button
+              onClick={() =>
                 window.open("https://lasttxns.vercel.app/", "_blank")
               }
             >
@@ -147,13 +154,6 @@ function App() {
               }
             >
               Stakerweb (ETH only)
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://pulsechain-tokens.vercel.app/", "_blank")
-              }
-            >
-              PulseChain Token Explorer
             </button>
             <button
               onClick={() =>
