@@ -129,6 +129,13 @@ function App() {
             >
               Gas Estimates (Vercel App)
             </button>
+            <button
+              onClick={() =>
+                window.open("https://syncduty.vercel.app/", "_blank")
+              }
+            >
+              Validators Sync Duties Checker
+            </button>
               </div>
             
             <div className="add-beta-section">
