@@ -106,7 +106,7 @@ function App() {
                 window.open("https://pulsechain.vercel.app/", "_blank")
               }
             >
-              PulseChain Quicklink
+              PulseChain Quicklink (Retired)
             </button>
             <button
               onClick={() =>
