@@ -103,10 +103,10 @@ function App() {
           <h3 className="add-token-title">Tools</h3>
           <button
               onClick={() =>
-                window.open("https://pulsechain.vercel.app/", "_blank")
+                window.open("https://tokenholder.vercel.app/", "_blank")
               }
             >
-              PulseChain Quicklink (Retired)
+              PulseChain token holder exporter
             </button>
             <button
               onClick={() =>
