@@ -28,6 +28,17 @@ function App() {
           </a>
         </div>
         <h1>Poseidon</h1>
+        <div className="donations-section">
+          <h3 className="navigation-heading">Donations will be greatly appreciated. Funds will be mainly used for PulseChain building, for example, VPS, Archive node and more. Thank you.</h3>
+          <div className="navigation-buttons">
+            <button
+              onClick={() =>
+                window.open("https://poseidon.pls.fyi/", "_blank")
+              }
+            >Donate to Poseidon
+            </button>
+            </div>
+            </div>
         <div className="navigation-section">
           <h3 className="navigation-heading">Chrome Extensions</h3>
           <div className="navigation-buttons">
