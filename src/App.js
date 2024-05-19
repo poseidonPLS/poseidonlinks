@@ -121,6 +121,13 @@ function App() {
             </button>
             <button
               onClick={() =>
+                window.open("https://validator-income.vercel.app/", "_blank")
+              }
+            >
+              Validator Income / Online Checker
+            </button>
+            <button
+              onClick={() =>
                 window.open("https://pulsechain-tokens.vercel.app/", "_blank")
               }
             >
@@ -209,7 +216,7 @@ function App() {
         <p>Site made by Poseidon</p>
         <div className="disclaimer">
           <p>
-            Disclaimer: The information provided by this application is for
+            Disclaimer: The Information provided by this application is for
             informational purposes only. Do be careful when adding contract
             addresses as they might be fraudulent. While we strive to keep the
             information up-to-date and correct, we make no representations or
