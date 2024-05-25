@@ -121,6 +121,13 @@ function App() {
             </button>
             <button
               onClick={() =>
+                window.open("https://pls-validator.vercel.app/", "_blank")
+              }
+            >
+              PulseChain Validator Status
+            </button>
+            <button
+              onClick={() =>
                 window.open("https://validator-income.vercel.app/", "_blank")
               }
             >
