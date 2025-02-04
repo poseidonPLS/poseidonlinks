@@ -1,239 +1,140 @@
+import { useState, useEffect } from "react";
 import "./App.css";
-import logo from "./logo.png"; // Import PulseChain logo image
-import logoPulseX from "./logoPulseX.png"; // Import the PulseX logo image
-import logoHEX from "./logoHEX.png"; // Import the HEX logo image
+import logo from "./logo.png";
+import logoPulseX from "./logoPulseX.png";
+import logoHEX from "./logoHEX.png";
+
+const Section = ({ title, items }) => (
+  <div className="section">
+    <h3>{title}</h3>
+    <div className="button-grid">
+      {items.map((item, index) => (
+        <button key={index} onClick={() => window.open(item.link, "_blank")}>
+          {item.label}
+        </button>
+      ))}
+    </div>
+  </div>
+);
 
 function App() {
+  const [isDarkMode, setIsDarkMode] = useState(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme ? savedTheme === "dark" : true; // Default to dark mode
+  });
+
+  const sections = [
+    {
+      title: "Chrome Extensions",
+      items: [
+        { label: "PulseChain Site Checker (Chrome)", link: "https://chromewebstore.google.com/detail/pulsechain-site-checker/jlomlcignpojmjjmiginogpoeaeldpnf?hl=en" },
+        { label: "PulseChain Site Checker (FireFox)", link: "https://addons.mozilla.org/addon/pulsechain-site-checker/" },
+        { label: "Pulsechain Gas Estimates", link: "https://chromewebstore.google.com/detail/pulsechain-gas-estimates/mfedonkdkfnekjjnnceeklimanolfloo?hl=en" }
+      ]
+    },
+    {
+      title: "Socials",
+      items: [
+        { label: "Youtube Channel", link: "https://www.youtube.com/@poseidon5555" },
+        { label: "Twitter", link: "https://twitter.com/Poseidon_5555" },
+        { label: "Telegram", link: "https://t.me/Poseidon_PLS" }
+      ]
+    },
+    {
+      title: "Telegram Bots",
+      items: [
+        { label: "PulseX buys", link: "https://t.me/PulseXbuy" },
+        { label: "Price Bot", link: "https://t.me/PLSXpricebot" }
+      ]
+    },
+    {
+      title: "Tools",
+      items: [
+        { label: "PulseChain token holder exporter", link: "https://tokenholder.vercel.app/" },
+        { label: "PulseChain Validator Status", link: "https://pls-validator.vercel.app/" },
+        { label: "Validator Income / Online Checker", link: "https://validator-income.vercel.app/" },
+        { label: "PulseChain Token Explorer", link: "https://pulsechain-tokens.vercel.app/" },
+        { label: "Block explorer backup (last 20 txns)", link: "https://lasttxns.vercel.app/" },
+        { label: "Official RPC Mempool", link: "https://PLSmempool.vercel.app/" },
+        { label: "Impermanent Loss Calculator", link: "https://imp-loss.vercel.app/" },
+        { label: "Gas Estimates (Vercel App)", link: "https://plsgas.vercel.app/" },
+        { label: "Validators Sync Duties Checker", link: "https://syncduty.vercel.app/" },
+        { label: "PulseChain Bridge Status", link: "https://pls-bridge-status.vercel.app/" }
+      ]
+    },
+    {
+      title: "Experimental Apps",
+      items: [
+        { label: "Stakerweb (ETH only)", link: "https://stakerweb.vercel.app//" },
+        { label: "Link Fixer (for broken IPFS links)", link: "https://plsredirect.vercel.app/" },
+        { label: "Slippage Simulator", link: "https://slippage.vercel.app/" },
+        { label: "LP Simulator", link: "https://lp-sim.vercel.app/" },
+        { label: "PLP Pair info (Fetches filter tokens pairs)", link: "https://plslp.vercel.app/" }
+      ]
+    }
+  ];
+
+  useEffect(() => {
+    const html = document.documentElement;
+    if (isDarkMode) {
+      html.setAttribute("data-theme", "dark");
+      localStorage.setItem("theme", "dark");
+    } else {
+      html.removeAttribute("data-theme");
+      localStorage.setItem("theme", "light");
+    }
+  }, [isDarkMode]);
 
   return (
     <div className="App">
-      <header className="App-header">
-        <div className="logo-container">
-          <a href="https://hex.com" target="_blank" rel="noopener noreferrer">
-            <img src={logoHEX} alt="HEX Logo" className="logo" />
-          </a>
-          <a
-            href="https://pulsechain.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={logo} alt="PulseChain Logo" className="logo" />
-          </a>
-          <a
-            href="https://pulsex.com"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={logoPulseX} alt="PulseX Logo" className="logo" />
-          </a>
-        </div>
-        <h1>Poseidon</h1>
-        <div className="donations-section">
-          <h3 className="navigation-heading">Donations will be greatly appreciated. Funds will be mainly used for PulseChain building, for example, VPS, Archive node and more. Thank you.</h3>
-          <div className="navigation-buttons">
-            <button
-              onClick={() =>
-                window.open("https://poseidon.pls.fyi/", "_blank")
-              }
-            >Donate to Poseidon
-            </button>
-            </div>
-            </div>
-        <div className="navigation-section">
-          <h3 className="navigation-heading">Chrome Extensions</h3>
-          <div className="navigation-buttons">
-            <button
-              onClick={() =>
-                window.open("https://chromewebstore.google.com/detail/pulsechain-site-checker/jlomlcignpojmjjmiginogpoeaeldpnf?hl=en", "_blank")
-              }
-            >
-              PulseChain Site Checker (Chrome)
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://addons.mozilla.org/addon/pulsechain-site-checker/", "_blank")
-              }
-            >
-              PulseChain Site Checker (FireFox)
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://chromewebstore.google.com/detail/pulsechain-gas-estimates/mfedonkdkfnekjjnnceeklimanolfloo?hl=en", "_blank")
-              }
-            >
-              Pulsechain Gas Estimates
-            </button>
-          </div>
-        </div>
-        <div className="youtube-section">
-          <h3 className="navigation-heading">Socials</h3>
-          <div className="navigation-buttons">
-            <button
-              onClick={() =>
-                window.open("https://www.youtube.com/@poseidon5555", "_blank")
-              }
-            >
-              Youtube Channel
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://twitter.com/Poseidon_5555", "_blank")
-              }
-            >
-              Twitter
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://t.me/Poseidon_PLS", "_blank")
-              }
-            >
-              Telegram
-            </button>
-          </div>
-        </div>
-        <div className="tgbots-section">
-          <h3 className="navigation-heading">Telegram Bots</h3>
-          <div className="navigation-buttons">
-            <button
-              onClick={() =>
-                window.open("https://t.me/PulseXbuy", "_blank")
-              }
-            >
-              PulseX buys
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://t.me/PLSXpricebot", "_blank")
-              }
-            >
-              Price Bot
-            </button>
-          </div>
-        </div>
-        <div className="add-token-section">
-          <h3 className="add-token-title">Tools</h3>
-          <button
-              onClick={() =>
-                window.open("https://tokenholder.vercel.app/", "_blank")
-              }
-            >
-              PulseChain token holder exporter
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://pls-validator.vercel.app/", "_blank")
-              }
-            >
-              PulseChain Validator Status
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://validator-income.vercel.app/", "_blank")
-              }
-            >
-              Validator Income / Online Checker
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://pulsechain-tokens.vercel.app/", "_blank")
-              }
-            >
-              PulseChain Token Explorer
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://lasttxns.vercel.app/", "_blank")
-              }
-            >
-              Block explorer backup (last 20 txns)
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://PLSmempool.vercel.app/", "_blank")
-              }
-            >
-              Official RPC Mempool
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://imp-loss.vercel.app/", "_blank")
-              }
-            >
-              Impermanent Loss Calculator
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://plsgas.vercel.app/", "_blank")
-              }
-            >
-              Gas Estimates (Vercel App)
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://syncduty.vercel.app/", "_blank")
-              }
-            >
-              Validators Sync Duties Checker
-            </button>
-              </div>
-            
-            <div className="add-beta-section">
-            <hr></hr>
-            <h3 className="add-token-title">Experimental Apps, for information only!</h3>
-            <button
-              onClick={() =>
-                window.open("https://stakerweb.vercel.app//", "_blank")
-              }
-            >
-              Stakerweb (ETH only)
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://plsredirect.vercel.app/", "_blank")
-              }
-            >
-              Link Fixer (for broken IPFS links)
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://slippage.vercel.app/", "_blank")
-              }
-            >
-              Slippage Simulator
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://lp-sim.vercel.app/", "_blank")
-              }
-            >
-              LP Simulator
-            </button>
-            <button
-              onClick={() =>
-                window.open("https://plslp.vercel.app/", "_blank")
-              }
-            >
-              PLP Pair info (Fetches filter tokens pairs)
-            </button>
+      <button 
+        className="theme-toggle"
+        onClick={() => setIsDarkMode(!isDarkMode)}
+        aria-label="Toggle dark mode"
+      >
+        {isDarkMode ? "☀️" : "🌙"}
+      </button>
 
+      <header className="header">
+        <div className="logo-container">
+          {[
+            { src: logoHEX, link: "https://hex.com" },
+            { src: logo, link: "https://pulsechain.com" },
+            { src: logoPulseX, link: "https://pulsex.com" }
+          ].map((logo, index) => (
+            <a key={index} href={logo.link} target="_blank" rel="noopener noreferrer">
+              <img src={logo.src} alt="Logo" className="logo" />
+            </a>
+          ))}
+        </div>
+
+        <h1 className="title">Poseidon</h1>
+
+        <div className="donation-banner">
+          <p>Support PulseChain development (VPS, Archive node, etc.)</p>
+          <button onClick={() => window.open("https://poseidon.pls.fyi/", "_blank")}>
+            🚀 Donate to Poseidon
+          </button>
         </div>
       </header>
 
-      <footer className="App-footer">
-        <p>Site made by Poseidon</p>
+      <main className="main-content">
+        {sections.map((section, index) => (
+          <Section
+            key={index}
+            title={section.title}
+            items={section.items}
+          />
+        ))}
+      </main>
+
+      <footer className="footer">
+        <p>© Poseidon {new Date().getFullYear()}</p>
         <div className="disclaimer">
-          <p>
-            Disclaimer: The Information provided by this application is for
-            informational purposes only. Do be careful when adding contract
-            addresses as they might be fraudulent. While we strive to keep the
-            information up-to-date and correct, we make no representations or
-            warranties of any kind, express or implied, about the completeness,
-            accuracy, reliability, suitability, or availability with respect to
-            the information, products, or services provided. Users are
-            encouraged to do their own research and verify the information
-            before acting on it. Any reliance you place on such information is
-            strictly at your own risks.
-          </p>
+          <details>
+            <summary>Disclaimer</summary>
+            <p>The information provided is for informational purposes only. We make no guarantees about accuracy or completeness. Always do your own research and verify information before acting on it. Use at your own risk.</p>
+          </details>
         </div>
       </footer>
     </div>
