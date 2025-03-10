@@ -92,12 +92,17 @@ function App() {
         },
         {
           label: "PulseChain Site Checker (FireFox)",
-          link: "https://addons.mozilla.org/addon/pulsechain-site-checker/",
+          link: "https://addons.mozilla.org/en-US/firefox/addon/pulsechain-sitechecker/",
           description: "Firefox fans, we’ve got your back too!",
         },
         {
-          label: "Pulsechain Gas Estimates",
+          label: "Pulsechain Gas Estimates (Chrome)",
           link: "https://chromewebstore.google.com/detail/pulsechain-gas-estimates/mfedonkdkfnekjjnnceeklimanolfloo?hl=en",
+          description: "No more gas guesswork—save those PLS!",
+        },
+        {
+          label: "Pulsechain Gas Estimates (FireFox)",
+          link: "https://addons.mozilla.org/en-US/firefox/addon/pulsechain-gas-estimates/",
           description: "No more gas guesswork—save those PLS!",
         },
       ],
