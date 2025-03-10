@@ -141,11 +141,6 @@ function App() {
       title: "Tools",
       items: [
         {
-          label: "PulseChain token holder exporter",
-          link: "https://tokenholder.vercel.app/",
-          description: "Export token holders like a data wizard!",
-        },
-        {
           label: "PulseChain Validator Status",
           link: "https://pls-validator.vercel.app/",
           description: "Keeping tabs on validators—sneaky, huh?",
@@ -157,7 +152,7 @@ function App() {
         },
         {
           label: "PulseChain Token Explorer",
-          link: "https://pulsechain-tokens.vercel.app/",
+          link: "https://check.pulsex.win/",
           description: "Explore tokens like a crypto treasure hunter!",
         },
         {
@@ -172,12 +167,12 @@ function App() {
         },
         {
           label: "Impermanent Loss Calculator",
-          link: "https://imp-loss.vercel.app/",
+          link: "https://imp-loss.pulsex.win/",
           description: "Losses? More like temporary adventures!",
         },
         {
           label: "Gas Estimates (Vercel App)",
-          link: "https://plsgas.vercel.app/",
+          link: "https://gas.pulsex.win/",
           description: "Gas prices without the shock factor!",
         },
         {
@@ -191,8 +186,13 @@ function App() {
           description: "Bridge updates—cross with confidence!",
         },
         {
+          label: "PulseChain Bridge contracts checker",
+          link: "https://bcontracts.pulsex.win/",
+          description: "Find that elusive contract—fast!",
+        },
+        {
           label: "PulseChain Token Liquidity and Volume",
-          link: "https://tokenspls.vercel.app/",
+          link: "https://tokenpls.pulsex.win/",
           description: "Liquidity so juicy you’ll want a sip!",
         },
         {
@@ -205,16 +205,6 @@ function App() {
     {
       title: "Experimental Apps",
       items: [
-        {
-          label: "Stakerweb (ETH only)",
-          link: "https://stakerweb.vercel.app//",
-          description: "Staking on ETH—old school cool!",
-        },
-        {
-          label: "Link Fixer (for broken IPFS links)",
-          link: "https://plsredirect.vercel.app/",
-          description: "Fixing links like a digital superhero!",
-        },
         {
           label: "Slippage Simulator",
           link: "https://slippage.vercel.app/",
