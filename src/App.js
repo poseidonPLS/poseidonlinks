@@ -55,9 +55,10 @@ const Section = ({ title, items, onButtonClick }) => (
         <button
           key={index}
           onClick={() => onButtonClick(item.link)}
-          title={item.description} // Quirky tooltip
+          className="card-button"
         >
-          {item.label}
+          <span className="card-label">{item.label}</span>
+          <span className="card-description">{item.description}</span>
         </button>
       ))}
     </div>
@@ -96,12 +97,12 @@ function App() {
           description: "Firefox fans, we’ve got your back too!",
         },
         {
-          label: "Pulsechain Gas Estimates (Chrome)",
+          label: "PulseChain Gas Estimates (Chrome)",
           link: "https://chromewebstore.google.com/detail/pulsechain-gas-estimates/mfedonkdkfnekjjnnceeklimanolfloo?hl=en",
           description: "No more gas guesswork—save those PLS!",
         },
         {
-          label: "Pulsechain Gas Estimates (FireFox)",
+          label: "PulseChain Gas Estimates (FireFox)",
           link: "https://addons.mozilla.org/en-US/firefox/addon/pulsechain-gas-estimates/",
           description: "No more gas guesswork—save those PLS!",
         },
@@ -111,7 +112,7 @@ function App() {
       title: "Socials",
       items: [
         {
-          label: "Youtube Channel",
+          label: "YouTube Channel",
           link: "https://www.youtube.com/@poseidon5555",
           description: "Videos hotter than a PulseChain block!",
         },
@@ -131,7 +132,7 @@ function App() {
       title: "Telegram Bots",
       items: [
         {
-          label: "PulseX buys",
+          label: "PulseX Buys",
           link: "https://t.me/PulseXbuy",
           description: "Buy alerts faster than you can say ‘moon’!",
         },
@@ -146,11 +147,6 @@ function App() {
       title: "Tools",
       items: [
         {
-          label: "PulseChain Validator Status",
-          link: "https://pls-validator.vercel.app/",
-          description: "Keeping tabs on validators—sneaky, huh?",
-        },
-        {
           label: "Validator Income / Online Checker",
           link: "https://validator-income.vercel.app/",
           description: "Who’s earning that sweet validator juice?",
@@ -161,7 +157,7 @@ function App() {
           description: "Explore tokens like a crypto treasure hunter!",
         },
         {
-          label: "Block explorer backup (last 20 txns)",
+          label: "Block Explorer Backup (last 20 txns)",
           link: "https://lasttxns.vercel.app/",
           description: "Peek at the latest blockchain gossip!",
         },
@@ -176,22 +172,12 @@ function App() {
           description: "Losses? More like temporary adventures!",
         },
         {
-          label: "Gas Estimates (Vercel App)",
-          link: "https://gas.pulsex.win/",
-          description: "Gas prices without the shock factor!",
-        },
-        {
-          label: "Validators Sync Duties Checker",
-          link: "https://syncduty.vercel.app/",
-          description: "Are validators in sync? Let’s find out!",
-        },
-        {
           label: "PulseChain Bridge Status",
-          link: "https://plsbridge.vercel.app/",
+          link: "https://bridge.pulsex.win/",
           description: "Bridge updates—cross with confidence!",
         },
         {
-          label: "PulseChain Bridge contracts checker",
+          label: "PulseChain Bridge Contracts Checker",
           link: "https://bcontracts.pulsex.win/",
           description: "Find that elusive contract—fast!",
         },
@@ -199,6 +185,31 @@ function App() {
           label: "PulseChain Token Liquidity and Volume",
           link: "https://tokenpls.pulsex.win/",
           description: "Liquidity so juicy you’ll want a sip!",
+        },
+        {
+          label: "PulseChain Anniversary Countdown",
+          link: "https://milestone.pulsex.win/",
+          description: "Counting down to PulseChain milestones!",
+        },
+        {
+          label: "PulseChain Validator Status",
+          link: "https://valid.pulsex.win/",
+          description: "Check the status of PulseChain validators!",
+        },
+        {
+          label: "PulseChain Sync Duties",
+          link: "https://syncduty.pulsex.win/",
+          description: "Monitor validator sync duties!",
+        },
+        {
+          label: "PulseChain Treasury",
+          link: "https://track.pulsex.win/",
+          description: "Track the PulseChain treasury!",
+        },
+        {
+          label: "PulseX Farms Stats",
+          link: "https://farms.pulsex.win/",
+          description: "Statistics for PulseX farming rewards!",
         },
         {
           label: "PLS vs. PLSX Race to $0.0001",
@@ -221,7 +232,7 @@ function App() {
           description: "Liquidity pools, but make it playful!",
         },
         {
-          label: "PLP Pair info",
+          label: "PLP Pair Info",
           link: "https://plslp.vercel.app/",
           description: "Token pairs spilling all the tea!",
         },
